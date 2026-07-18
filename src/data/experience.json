@@ -1,0 +1,56 @@
+[
+  {
+    "role": "Senior Systems Engineer / Acting Technical Product Owner",
+    "company": "Harrison.ai",
+    "period": "2021 – 2026",
+    "tags": ["Clinical AI", "SaMD", "ISO 13485 / 14971 / 62304"],
+    "bullets": [
+      "Led systems engineering and software release cycles for the Harrison Open Platform (HOP) — a multi-tenant clinical AI platform delivering AI results for chest X-ray and CT brain/chest studies into hospital radiology workflows.",
+      "Owned system-wide functional and non-functional requirements; translated product vision into feature elaborations, acceptance criteria and interface specs for features like Comparison of Priors, Triage, Translations and a 3rd-Party AI Adapter.",
+      "Led patient and security risk assessments for SaMD/AI model components (ISO 14971, DCB 0129); served as SME for MDSAP audits, defending Design & Development and Production Controls chapters to maintain ISO 13485 / IEC 62304 compliance.",
+      "Release lead across multiple engineering teams: coordinated delivery, managed dependencies, escalated risk, and drove fix/defer calls on production non-conformances.",
+      "Defined production metrics and analytics (Grafana, MongoDB, Tableau) to monitor adoption, diagnose issues and close the loop with data-driven configuration tuning.",
+      "Drove AI-assisted development adoption: OpenSpec + Claude Code spec-to-code workflows, POCs to de-risk product bets, and mentoring junior systems engineers."
+    ]
+  },
+  {
+    "role": "Systems / Software Engineer",
+    "company": "Thales Australia",
+    "period": "2015 – 2020",
+    "tags": ["Defence", "Flight Simulation", "Air Traffic Management"],
+    "bullets": [
+      "Work Package Manager — scope, schedule, budget, risk and safety — for an obsolescence remediation project on the RAAF Wedgetail flight simulator.",
+      "Programmed updates to the Traffic Collision Avoidance System (TCAS) in C, and Python tooling to analyse large volumes of navigational data.",
+      "Contributed to the Australian Defence Air Traffic Management System (ADATS): schematic updates and on-site validation testing at a live control tower.",
+      "Recognised as requirements management 'Champion', trained at Thales France HQ; led engineering tooling adoption across teams. Nominated for Emerging Talent; received a Business Development award."
+    ]
+  },
+  {
+    "role": "Graduate Systems Engineer",
+    "company": "Boeing Defence Australia",
+    "period": "2014 – 2015",
+    "tags": ["C2 Systems", "Tactical Data Links"],
+    "bullets": [
+      "Requirements management and verification on the Vigilare air defence command-and-control system, supporting integration of new capability into a deployed RAAF C2 platform.",
+      "Resolved trouble reports across Tactical Data Links (Link 11, Link 16, AADSLINK)."
+    ]
+  },
+  {
+    "role": "Graduate Systems Engineer",
+    "company": "ResMed",
+    "period": "2014",
+    "tags": ["Medical Devices"],
+    "bullets": [
+      "Requirements management, verification, and defect root-cause analysis on the Astral life-support ventilator."
+    ]
+  },
+  {
+    "role": "Engineering Intern",
+    "company": "Qantas Airways",
+    "period": "2012 – 2013",
+    "tags": ["Aviation"],
+    "bullets": [
+      "Built a C# cabin layout optimiser compliant with FAA regulations (university thesis project)."
+    ]
+  }
+]

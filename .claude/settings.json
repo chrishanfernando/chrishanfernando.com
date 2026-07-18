@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "defaultMode": "dontAsk",
+    "allow": [
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(node *)",
+      "Bash(git *)",
+      "Bash(gh *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(sed *)",
+      "Bash(unzip *)",
+      "Bash(zip *)",
+      "Bash(file *)",
+      "Bash(du *)",
+      "Bash(curl *)",
+      "Bash(python3 *)",
+      "Bash(/Applications/LibreOffice.app/Contents/MacOS/soffice *)",
+      "Read(//Users/chrishanfernando/Desktop/jobs/**)",
+      "WebFetch(domain:chrishanfernando.com)",
+      "WebFetch(domain:*.pages.dev)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.astro.build)"
+    ]
+  }
+}
