@@ -1,0 +1,8 @@
+// Cloudflare Workers config — static assets only, no server-side code.
+{
+  "name": "professionalprofile",
+  "compatibility_date": "2026-07-18",
+  "assets": {
+    "directory": "./dist"
+  }
+}
