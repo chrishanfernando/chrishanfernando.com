@@ -1,6 +1,6 @@
 # chrishanfernando.com
 
-Chrishan's personal website: professional profile + projects. Astro static site, deployed via Cloudflare Pages on push to `main`. Custom domain `chrishanfernando.com` (registrar + DNS: Cloudflare).
+Chrishan's personal website: professional profile + projects. Astro static site, deployed as a Cloudflare **Worker** (static assets via `wrangler.jsonc`) on push to `main`. Worker name: `professionalprofile` (preview URL: professionalprofile.chriz999.workers.dev). Custom domains `chrishanfernando.com` + `www` (registrar + DNS: Cloudflare). Email Routing forwards hello@chrishanfernando.com to Gmail.
 
 ## Content updates (the common task)
 
@@ -11,7 +11,7 @@ Content is data-driven — for "update my site" requests, edit JSON only:
 - `src/data/projects.json` — project cards
 - `public/resume.pdf` — downloadable resume (SysEng version, **phone number stripped**; source of truth is `/Users/chrishanfernando/Desktop/jobs/Resume_Generic_SysEng.docx`, regenerate via LibreOffice: `/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf`)
 
-After editing: `npm run build` to verify, then commit and push to `main` — Cloudflare deploys automatically. Verify at https://chrishanfernando.com after ~1 minute.
+After editing: `npm run build` to verify, then commit and push to `main` — Cloudflare Workers Builds runs `npm run build` + `npx wrangler deploy` automatically. Verify at https://chrishanfernando.com after ~1 minute (if sandbox DNS won't resolve, pin the IP: `curl --resolve chrishanfernando.com:443:104.21.58.103 ...` or fetch the workers.dev URL).
 
 ## Conventions
 
