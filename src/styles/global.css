@@ -89,10 +89,16 @@ nav {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(11, 14, 20, 0.82);
+  background: rgba(11, 14, 20, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
+}
+
+/* Where backdrop-filter isn't supported, use a near-solid bar so content
+   scrolling under the nav can't bleed through and look like an overlap */
+@supports not ((backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px))) {
+  nav { background: rgba(11, 14, 20, 0.98); }
 }
 
 .nav-inner {
@@ -135,6 +141,33 @@ nav {
 @media (max-width: 640px) {
   .nav-links { gap: 1rem; }
   .nav-links a .idx { display: none; }
+
+  /* 92vh + centering can misbehave on short/dynamic mobile viewports and
+     crowd the following section — use natural flow with explicit spacing */
+  .hero {
+    min-height: auto;
+    padding-top: 7rem;
+    padding-bottom: 3.5rem;
+  }
+
+  section { padding-top: 4rem; }
+}
+
+/* On narrow phones the logo + 4 links don't fit: the logo collides with
+   "about" and the links overflow the right edge (contact gets cut off).
+   Drop the brand logo and spread the links across the bar instead. */
+@media (max-width: 520px) {
+  .nav-logo { display: none; }
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.7rem;
+  }
+  .nav-links a { font-size: 0.75rem; }
+}
+
+@media (max-width: 400px) {
+  .container { padding: 0 1.15rem; }
 }
 
 /* ── Hero ───────────────────────────────────────────── */
@@ -158,6 +191,7 @@ nav {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.08;
+  overflow-wrap: break-word;
 }
 
 .hero h1 .cursor {
@@ -427,7 +461,9 @@ section {
 /* ── Projects ───────────────────────────────────────── */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  /* min(100%, 310px) stops the 310px track from overflowing viewports
+     narrower than 310px + padding (e.g. 320px phones) */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
   gap: 1.3rem;
 }
 
