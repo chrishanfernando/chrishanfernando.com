@@ -1,16 +1,16 @@
 [
   {
-    "name": "SMART on FHIR Demo",
-    "description": "A ~110-line SMART on FHIR app that launches inside a sandbox EHR, reads the patient and their observations, and writes a clinical note back — handling the addendum-vs-edit distinction EHRs treat differently in the wild. Most public SMART demos only read; this one writes back, which is where the interesting integration questions live.",
-    "tags": ["FHIR", "OAuth 2.0", "Healthcare IT", "Vanilla JS"],
-    "github": "https://github.com/chrishanfernando/smart-fhir-demo",
-    "highlight": true
-  },
-  {
     "name": "FolioXtracker",
     "description": "Self-hosted investment portfolio tracker and rebalancer. Records trades across crypto and equity platforms, normalises everything to AUD, fetches daily prices from Yahoo Finance, and gives buy-only rebalance recommendations against category targets. Broker file imports, IMAP auto-import of trade confirmations, runs on Vercel or a Raspberry Pi.",
     "tags": ["Next.js", "TypeScript", "Drizzle", "Turso", "Self-hosted"],
     "github": "https://github.com/chrishanfernando/folioxtracker",
+    "highlight": true
+  },
+  {
+    "name": "SMART on FHIR Demo",
+    "description": "A ~110-line SMART on FHIR app that launches inside a sandbox EHR, reads the patient and their observations, and writes a clinical note back — handling the addendum-vs-edit distinction EHRs treat differently in the wild. Most public SMART demos only read; this one writes back, which is where the interesting integration questions live.",
+    "tags": ["FHIR", "OAuth 2.0", "Healthcare IT", "Vanilla JS"],
+    "github": "https://github.com/chrishanfernando/smart-fhir-demo",
     "highlight": true
   }
 ]
