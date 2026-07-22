@@ -7,10 +7,10 @@
     "highlight": true
   },
   {
-    "name": "Portfolio Tracker",
+    "name": "FolioXtracker",
     "description": "Self-hosted investment portfolio tracker and rebalancer. Records trades across crypto and equity platforms, normalises everything to AUD, fetches daily prices from Yahoo Finance, and gives buy-only rebalance recommendations against category targets. Broker file imports, IMAP auto-import of trade confirmations, runs on Vercel or a Raspberry Pi.",
     "tags": ["Next.js", "TypeScript", "Drizzle", "Turso", "Self-hosted"],
-    "github": "https://github.com/chrishanfernando/portfolio-app",
+    "github": "https://github.com/chrishanfernando/folioxtracker",
     "highlight": true
   }
 ]

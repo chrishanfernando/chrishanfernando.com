@@ -1,14 +1,14 @@
 {
   "name": "Chrishan Fernando",
   "title": "Senior Systems Engineer",
-  "tagline": "Clinical AI · Regulated MedTech · Safety-critical systems",
+  "tagline": "Regulated MedTech · Safety-critical systems · Requirements & V&V",
   "location": "Sydney, Australia",
   "email": "hello@chrishanfernando.com",
   "github": "https://github.com/chrishanfernando",
   "linkedin": "https://www.linkedin.com/in/chrishan-fernando/",
-  "summary": "Twelve years engineering safety-critical systems — from clinical AI platforms in regulated MedTech to embedded defence systems. Most recently at Harrison.ai, leading systems engineering for the Harrison Open Platform, a multi-tenant clinical AI platform delivering radiology AI results into hospitals worldwide. I care about building technology that makes a real difference to patients and the clinicians who care for them.",
+  "summary": "Twelve years engineering safety-critical systems — from radiology AI platforms in regulated MedTech to embedded defence systems. Most recently at Harrison.ai, leading systems engineering for the Harrison Open Platform, a multi-tenant platform delivering radiology AI results into hospitals worldwide. My work is the engineering around the system — requirements, interfaces, integration and safety — not building the models themselves. I care about building technology that makes a real difference to patients and the clinicians who care for them.",
   "about": [
-    "I work at the intersection of systems engineering, clinical safety, and AI. At Harrison.ai I owned system-wide requirements, led patient and security risk assessments for SaMD/AI components, and served as audit SME for MDSAP — defending design and development practices to keep a clinical AI platform compliant with ISO 13485, ISO 14971 and IEC 62304.",
+    "I'm a systems engineer: my work sits around the AI, not inside it. I treat the models as components — managing the interfaces, requirements, integration and clinical safety of the system that wraps them. At Harrison.ai I owned system-wide requirements, led patient and security risk assessments for SaMD/AI components, and served as audit SME for MDSAP — defending design and development practices to keep the platform compliant with ISO 13485, ISO 14971 and IEC 62304.",
     "Before MedTech I spent six years in defence at Thales and Boeing: flight simulators, air traffic management, command-and-control systems, and tactical data links. I've written C for collision-avoidance systems, Python for navigational data analysis, and lately a lot of specs for AI to write the code for me.",
     "Outside of work I tinker — mostly with AI-assisted development (Claude Code, OpenSpec), healthcare interoperability (SMART on FHIR), and self-hosted tools that scratch my own itches."
   ],

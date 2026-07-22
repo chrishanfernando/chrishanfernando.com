@@ -25,7 +25,9 @@
       "WebFetch(domain:chrishanfernando.com)",
       "WebFetch(domain:*.pages.dev)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:docs.astro.build)"
+      "WebFetch(domain:docs.astro.build)",
+      "Edit",
+      "Write"
     ]
   }
 }
