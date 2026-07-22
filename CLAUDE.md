@@ -11,7 +11,18 @@ Content is data-driven — for "update my site" requests, edit JSON only:
 - `src/data/projects.json` — project cards
 - `public/resume.pdf` — downloadable resume (SysEng version, **phone number stripped**; source of truth is `/Users/chrishanfernando/Desktop/jobs/Resume_Generic_SysEng.docx`, regenerate via LibreOffice: `/Applications/LibreOffice.app/Contents/MacOS/soffice --headless --convert-to pdf`)
 
-After editing: `npm run build` to verify, then commit and push to `main` — Cloudflare Workers Builds runs `npm run build` + `npx wrangler deploy` automatically. Verify at https://chrishanfernando.com after ~1 minute (if sandbox DNS won't resolve, pin the IP: `curl --resolve chrishanfernando.com:443:104.21.58.103 ...` or fetch the workers.dev URL).
+After editing: `npm run build` to verify. **Never commit to `main` directly** — use the PR flow (below). Merging to `main` triggers the production deploy: Cloudflare Workers Builds runs `npm run build` + `npx wrangler deploy` automatically. Verify at https://chrishanfernando.com after ~1 minute (if sandbox DNS won't resolve, pin the IP: `curl --resolve chrishanfernando.com:443:104.21.58.103 ...` or fetch the workers.dev URL).
+
+## Deploy workflow (PR flow is the default)
+
+Production deploys on **push/merge to `main`**, so `main` is protected by convention — every change goes through a PR:
+
+1. Branch off `main`: `git checkout -b <topic>` (e.g. `content/update-projects`).
+2. Commit there, `npm run build` to verify, push the branch.
+3. Open a PR with `gh pr create` and let Chrishan review + merge. Do **not** self-merge unless he explicitly says to.
+4. On merge, Cloudflare builds `main` and deploys to production.
+
+Cloudflare Workers Builds is set to also build **non-production branches** and publish a **preview URL** (a versioned `*.professionalprofile.chriz999.workers.dev` alias) so changes can be eyeballed before merge — the preview link shows up on the PR / in the Cloudflare dashboard's build log.
 
 ## Conventions
 
