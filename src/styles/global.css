@@ -153,6 +153,19 @@ nav {
   section { padding-top: 4rem; }
 }
 
+/* On narrow phones the logo + 4 links don't fit: the logo collides with
+   "about" and the links overflow the right edge (contact gets cut off).
+   Drop the brand logo and spread the links across the bar instead. */
+@media (max-width: 520px) {
+  .nav-logo { display: none; }
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.7rem;
+  }
+  .nav-links a { font-size: 0.75rem; }
+}
+
 @media (max-width: 400px) {
   .container { padding: 0 1.15rem; }
 }
