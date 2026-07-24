@@ -253,6 +253,17 @@ A repeat loop that won't terminate is the failure mode to rule out before this g
 
 ## Configuration
 
+Save this as `garage-door.yaml`. Before flashing, replace the four placeholders with your own values — everything in `UPPER_CASE` below:
+
+| Placeholder | Replace with | Where to find it |
+|---|---|---|
+| `YOUR_WIFI_NAME` | Your Wi-Fi network name (SSID) | Your router / the network you connect to |
+| `YOUR_WIFI_PASSWORD` | Your Wi-Fi password | Same |
+| `YOUR_API_TOKEN` | The Pushover **application API token** | pushover.net → create an application |
+| `YOUR_USER_KEY` | Your Pushover **user key** | pushover.net dashboard (shown on login) |
+
+The Wi-Fi pair appears once; the **token/user-key pair appears three times** (the two-alert and heartbeat POST bodies) — replace it in all three, or the alerts won't send.
+
 ```yaml
 esphome:
   name: garage-door
