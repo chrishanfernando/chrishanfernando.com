@@ -770,3 +770,85 @@ footer a:hover { color: var(--accent); }
   .writeup { padding-top: 5.5rem; }
   .writeup-body h2 { margin-top: 2.2rem; }
 }
+
+/* Table of contents */
+.toc {
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--accent);
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 1.1rem 1.35rem;
+  margin-bottom: 2.6rem;
+}
+.toc-title {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+}
+.toc ul { list-style: none; padding: 0; margin: 0; }
+.toc li { margin: 0.26rem 0; }
+.toc li a { color: var(--text-muted); font-size: 0.9rem; }
+.toc li a:hover { color: var(--accent); }
+.toc .toc-d3 { padding-left: 1.1rem; }
+.toc .toc-d3 a { color: var(--text-faint); font-size: 0.84rem; }
+
+/* Diagrams (inline SVG figures) */
+.writeup-body .diagram {
+  margin: 1.9rem 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  padding: 1.1rem;
+}
+.writeup-body .diagram svg {
+  display: block;
+  width: 100%;
+  min-width: 640px;
+  max-width: 940px;
+  height: auto;
+  margin: 0 auto;
+}
+.writeup-body .diagram figcaption {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  font-family: var(--mono);
+  min-width: 640px;
+}
+.writeup-body .diagram text { font-family: var(--sans); }
+.writeup-body .diagram .l { fill: var(--text); font-weight: 600; font-size: 16px; }
+.writeup-body .diagram .s { fill: var(--text-muted); font-size: 13px; font-family: var(--mono); }
+.writeup-body .diagram .p { fill: var(--text); font-size: 12.5px; font-family: var(--mono); }
+
+/* Copy-to-clipboard button on code blocks */
+.writeup-body .code-wrap { position: relative; }
+.writeup-body .code-wrap + * { margin-top: 1.15rem; }
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--border-bright);
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.writeup-body .code-wrap:hover .copy-btn,
+.copy-btn:focus-visible { opacity: 1; }
+.copy-btn:hover { color: var(--accent); border-color: var(--accent); }
+.copy-btn.copied { color: var(--accent); border-color: var(--accent); opacity: 1; }
+.copy-btn svg { width: 13px; height: 13px; }
+@media (hover: none) { .copy-btn { opacity: 1; } }
