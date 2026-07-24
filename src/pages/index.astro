@@ -9,6 +9,7 @@ const linkedinIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
 const mailIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>`;
 const folderIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>`;
 const externalLinkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+const writeupIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>`;
 ---
 
 <Base>
@@ -101,6 +102,9 @@ const externalLinkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentCo
             <div class="project-top">
               <span class="folder" set:html={folderIcon} />
               <div class="project-links">
+                {project.writeup && (
+                  <a href={project.writeup} aria-label={`${project.name} write-up`} set:html={writeupIcon} />
+                )}
                 {project.link && (
                   <a href={project.link} target="_blank" rel="noopener" aria-label={`${project.name} live site`} set:html={externalLinkIcon} />
                 )}
@@ -109,7 +113,11 @@ const externalLinkIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentCo
                 )}
               </div>
             </div>
-            <h3><a href={project.link || project.github} target="_blank" rel="noopener">{project.name}</a></h3>
+            <h3>
+              {project.writeup
+                ? <a href={project.writeup}>{project.name}</a>
+                : <a href={project.link || project.github} target="_blank" rel="noopener">{project.name}</a>}
+            </h3>
             <p>{project.description}</p>
             <div class="chips">
               {project.tags.map((tag) => <span class="chip">{tag}</span>)}

@@ -13,5 +13,12 @@
     "tags": ["FHIR", "OAuth 2.0", "Healthcare IT", "Vanilla JS"],
     "github": "https://github.com/chrishanfernando/smart-fhir-demo",
     "highlight": true
+  },
+  {
+    "name": "Garage Door Left-Open Alert",
+    "description": "An ESP32 that detects when the garage door has been left open and pushes an alert to my phone. Deliberately scoped to monitoring only — an earlier design drove the opener's control input via relay, but removing the actuator made the system cheaper, simpler, and incapable of causing harm. Runs standalone on the microcontroller with no hub or always-on server.",
+    "tags": ["ESP32", "ESPHome", "IoT", "Embedded", "Home Automation"],
+    "writeup": "/projects/garage-door-alert",
+    "highlight": true
   }
 ]

@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+import profile from '../data/profile.json';
+
+const { frontmatter } = Astro.props;
+const { title, description, date, tags = [] } = frontmatter;
+
+const pageTitle = `${title} — ${profile.name}`;
+const canonical = new URL(Astro.url.pathname, 'https://chrishanfernando.com').href;
+const displayDate = date
+  ? new Date(date).toLocaleDateString('en-AU', { year: 'numeric', month: 'long' })
+  : null;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={canonical} />
+    <meta name="theme-color" content="#0b0e14" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <nav>
+      <div class="nav-inner">
+        <a class="nav-logo" href="/">chrishan<span class="accent">.</span></a>
+        <a class="writeup-back" href="/#projects">&larr; projects</a>
+      </div>
+    </nav>
+
+    <main class="writeup">
+      <header class="writeup-head">
+        <p class="writeup-eyebrow">Write-up</p>
+        <h1>{title}</h1>
+        {description && <p class="writeup-lede">{description}</p>}
+        <div class="writeup-meta">
+          {displayDate && <span>{displayDate}</span>}
+          {tags.map((tag: string) => <span class="chip">{tag}</span>)}
+        </div>
+      </header>
+
+      <article class="writeup-body">
+        <slot />
+      </article>
+
+      <footer class="writeup-foot">
+        <a href="/#projects">&larr; Back to projects</a>
+      </footer>
+    </main>
+  </body>
+</html>
