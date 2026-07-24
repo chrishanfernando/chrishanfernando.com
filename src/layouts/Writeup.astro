@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+import profile from '../data/profile.json';
+
+const { frontmatter, headings = [] } = Astro.props;
+const { title, description, date, tags = [] } = frontmatter;
+
+const toc = headings.filter((h: { depth: number }) => h.depth === 2 || h.depth === 3);
+
+const pageTitle = `${title} — ${profile.name}`;
+const canonical = new URL(Astro.url.pathname, 'https://chrishanfernando.com').href;
+const displayDate = date
+  ? new Date(date).toLocaleDateString('en-AU', { year: 'numeric', month: 'long' })
+  : null;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={canonical} />
+    <meta name="theme-color" content="#0b0e14" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <nav>
+      <div class="nav-inner">
+        <a class="nav-logo" href="/">chrishan<span class="accent">.</span></a>
+        <a class="writeup-back" href="/#projects">&larr; projects</a>
+      </div>
+    </nav>
+
+    <main class="writeup">
+      <header class="writeup-head">
+        <p class="writeup-eyebrow">Write-up</p>
+        <h1>{title}</h1>
+        {description && <p class="writeup-lede">{description}</p>}
+        <div class="writeup-meta">
+          {displayDate && <span>{displayDate}</span>}
+          {tags.map((tag: string) => <span class="chip">{tag}</span>)}
+        </div>
+      </header>
+
+      {toc.length > 0 && (
+        <nav class="toc" aria-label="Table of contents">
+          <p class="toc-title">Contents</p>
+          <ul>
+            {toc.map((h: { depth: number; slug: string; text: string }) => (
+              <li class={`toc-d${h.depth}`}><a href={`#${h.slug}`}>{h.text}</a></li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      <article class="writeup-body">
+        <slot />
+      </article>
+
+      <footer class="writeup-foot">
+        <a href="/#projects">&larr; Back to projects</a>
+      </footer>
+    </main>
+
+    <script>
+      const copyIcon =
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+      document.querySelectorAll('.writeup-body pre').forEach((pre) => {
+        const code = pre.querySelector('code');
+        if (!code) return;
+        const wrap = document.createElement('div');
+        wrap.className = 'code-wrap';
+        pre.parentNode.insertBefore(wrap, pre);
+        wrap.appendChild(pre);
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'copy-btn';
+        btn.setAttribute('aria-label', 'Copy code');
+        btn.innerHTML = copyIcon + '<span class="copy-label">Copy</span>';
+        const label = btn.querySelector('.copy-label');
+        btn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(code.innerText.replace(/\n$/, ''));
+            btn.classList.add('copied');
+            label.textContent = 'Copied';
+          } catch {
+            label.textContent = 'Failed';
+          }
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            label.textContent = 'Copy';
+          }, 1600);
+        });
+        wrap.appendChild(btn);
+      });
+    </script>
+  </body>
+</html>
