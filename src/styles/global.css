@@ -771,8 +771,12 @@ footer a:hover { color: var(--accent); }
   .writeup-body h2 { margin-top: 2.2rem; }
 }
 
-/* Table of contents */
+/* Table of contents — reset the global fixed `nav` styling it would inherit */
 .toc {
+  position: static;
+  z-index: auto;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border: 1px solid var(--border);
   border-left: 2px solid var(--accent);
   background: var(--surface);

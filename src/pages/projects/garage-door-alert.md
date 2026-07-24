@@ -40,7 +40,6 @@ Constraining scope to monitoring made the whole thing simpler, cheaper, and safe
   <text x="106" y="125" text-anchor="middle" class="l">Reed switch</text>
   <text x="106" y="145" text-anchor="middle" class="s">on door + magnet</text>
   <text x="106" y="162" text-anchor="middle" class="s">closed = door down</text>
-
   <rect x="286" y="50" width="248" height="160" rx="8" fill="#0f1922" stroke="#2dd4bf" stroke-width="2"/>
   <text x="410" y="82" text-anchor="middle" class="l">ESP32 · ESPHome</text>
   <line x1="306" y1="96" x2="514" y2="96" stroke="#243244"/>
@@ -48,17 +47,14 @@ Constraining scope to monitoring made the whole thing simpler, cheaper, and safe
   <text x="308" y="146" class="s">▹ timer: open &gt; 15 min</text>
   <text x="308" y="169" class="s">▹ night check after 22:00</text>
   <text x="308" y="192" class="s">▹ HTTP POST → Pushover</text>
-
   <rect x="632" y="68" width="184" height="124" rx="8" fill="#1b1710" stroke="#e0a458" stroke-width="1.6"/>
   <text x="724" y="102" text-anchor="middle" class="l">Pushover</text>
   <text x="724" y="124" text-anchor="middle" class="s">cloud push</text>
   <text x="724" y="144" text-anchor="middle" class="s">APNs / FCM</text>
   <text x="724" y="164" text-anchor="middle" class="s">delivery + retry</text>
-
   <rect x="908" y="80" width="118" height="100" rx="13" fill="#131824" stroke="#2a3547"/>
   <rect x="930" y="96" width="74" height="54" rx="4" fill="#0e2a26" stroke="#2dd4bf"/>
   <text x="967" y="127" text-anchor="middle" class="s">alert</text>
-
   <line x1="188" y1="130" x2="282" y2="130" stroke="#2dd4bf" stroke-width="2.4" marker-end="url(#arw-a)"/>
   <text x="235" y="120" text-anchor="middle" class="s">wire</text>
   <line x1="534" y1="130" x2="628" y2="130" stroke="#e0a458" stroke-width="2.4" marker-end="url(#arw-a)"/>
@@ -117,30 +113,23 @@ The logic the ESP32 runs continuously. Two independent triggers fire an alert �
   <line x1="360" y1="38" x2="360" y2="384" stroke="#2a3547" stroke-dasharray="4 5"/>
   <line x1="620" y1="38" x2="620" y2="384" stroke="#2a3547" stroke-dasharray="4 5"/>
   <line x1="905" y1="38" x2="905" y2="384" stroke="#2a3547" stroke-dasharray="4 5"/>
-
   <text x="120" y="68" text-anchor="middle" class="s">you open it</text>
   <line x1="128" y1="80" x2="352" y2="80" stroke="#2dd4bf" stroke-width="2" marker-end="url(#arw-s)"/>
   <text x="240" y="74" text-anchor="middle" class="s">magnet moves away</text>
-
   <line x1="368" y1="108" x2="612" y2="108" stroke="#2dd4bf" stroke-width="2" marker-end="url(#arw-s)"/>
   <text x="490" y="102" text-anchor="middle" class="s">contact opens → state = OPEN</text>
-
   <rect x="558" y="124" width="124" height="44" rx="5" fill="#0e2a26" stroke="#2dd4bf"/>
   <text x="620" y="142" text-anchor="middle" class="s">start 15-min</text>
   <text x="620" y="157" text-anchor="middle" class="s">timer (restart)</text>
-
   <line x1="368" y1="196" x2="612" y2="196" stroke="#2dd4bf" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arw-s)"/>
   <text x="490" y="190" text-anchor="middle" class="s">closed before 15 min → cancel, no alert</text>
-
   <rect x="558" y="214" width="124" height="44" rx="5" fill="#241014" stroke="#f2726b"/>
   <text x="620" y="232" text-anchor="middle" class="s">still OPEN</text>
   <text x="620" y="247" text-anchor="middle" class="s">at 15 min</text>
-
   <line x1="620" y1="282" x2="897" y2="282" stroke="#e0a458" stroke-width="2.4" marker-end="url(#arw-s)"/>
   <text x="762" y="276" text-anchor="middle" class="s">POST “Door open 15 min” — repeats every 15 min</text>
   <rect x="852" y="294" width="106" height="30" rx="5" fill="#131824" stroke="#2a3547"/>
   <text x="905" y="313" text-anchor="middle" class="s">📲 phone buzzes</text>
-
   <rect x="500" y="346" width="120" height="30" rx="5" fill="#1b1710" stroke="#e0a458"/>
   <text x="560" y="365" text-anchor="middle" class="s">nightly 22:00 check</text>
   <line x1="620" y1="361" x2="897" y2="361" stroke="#e0a458" stroke-width="2.4" marker-end="url(#arw-s)"/>
@@ -178,24 +167,20 @@ The entire circuit is two wires. The reed switch has no polarity — either leg 
   <rect x="30" y="34" width="164" height="70" rx="6" fill="#131824" stroke="#2a3547"/>
   <text x="112" y="64" text-anchor="middle" class="l">5 V USB charger</text>
   <text x="112" y="84" text-anchor="middle" class="s">any phone plug ≥ 1 A</text>
-
   <rect x="360" y="76" width="264" height="228" rx="10" fill="#0f1922" stroke="#2dd4bf" stroke-width="2"/>
   <text x="492" y="108" text-anchor="middle" class="l">ESP32-WROOM dev board</text>
   <rect x="472" y="66" width="40" height="14" rx="4" fill="#2a3547"/>
   <text x="492" y="134" text-anchor="middle" class="s">USB-C — power + first flash</text>
   <text x="492" y="272" text-anchor="middle" class="s">internal pull-up enabled in firmware</text>
-
   <circle cx="360" cy="186" r="5" fill="#e0a458"/><text x="345" y="190" text-anchor="end" class="p">5V / VIN</text>
   <circle cx="360" cy="226" r="5" fill="#8b98ab"/><text x="345" y="230" text-anchor="end" class="p">GND</text>
   <circle cx="624" cy="200" r="5" fill="#2dd4bf"/><text x="639" y="204" class="p">GPIO13</text>
   <circle cx="624" cy="244" r="5" fill="#8b98ab"/><text x="639" y="248" class="p">GND</text>
-
   <rect x="808" y="150" width="184" height="112" rx="8" fill="#131824" stroke="#2a3547"/>
   <text x="900" y="182" text-anchor="middle" class="l">Reed switch</text>
   <text x="900" y="202" text-anchor="middle" class="s">2 legs · no polarity</text>
   <circle cx="808" cy="224" r="5" fill="#2dd4bf"/><text x="820" y="228" class="p">leg A</text>
   <circle cx="808" cy="248" r="5" fill="#8b98ab"/><text x="820" y="252" class="p">leg B</text>
-
   <path d="M112 104 L112 138 L472 138 L472 80" fill="none" stroke="#e0a458" stroke-width="2.4" marker-end="url(#arw-w)"/>
   <path d="M629 200 L724 200 L724 224 L803 224" fill="none" stroke="#2dd4bf" stroke-width="2.4"/>
   <path d="M803 248 L700 248 L700 290 L360 290 L360 230" fill="none" stroke="#8b98ab" stroke-width="2.4" marker-end="url(#arw-w)"/>
