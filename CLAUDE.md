@@ -28,6 +28,6 @@ Cloudflare Workers Builds is set to also build **non-production branches** and p
 
 - Never publish Chrishan's phone number anywhere on the site or in the resume PDF.
 - Public contact email is `hello@chrishanfernando.com` (Cloudflare Email Routing → Gmail), not his Gmail addresses.
-- Positioning is engineering-led: Senior Systems Engineer in clinical AI / regulated MedTech first; product experience is supporting depth.
+- Positioning is engineering-led and domain-agnostic: Senior Systems Engineer for safety-critical systems, applying across MedTech (ideal), defence, and rail. Lead with the discipline (requirements, interfaces, integration, V&V, safety), not a single industry. State real domain experience (MedTech + defence) but don't over-index on clinical AI, and never claim to build AI/ML models — the work is the engineering around the system, not the models.
 - Design: dark theme (`#0b0e14`), teal accent (`#2dd4bf`), monospace accents. Keep it restrained — no heavy animation.
 - No frameworks/libraries beyond Astro; no external fonts or CDNs (fast + private).
