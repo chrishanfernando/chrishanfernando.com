@@ -1,8 +1,9 @@
 [
   {
     "name": "FolioXtracker",
-    "description": "Self-hosted investment portfolio tracker and rebalancer. Records trades across crypto and equity platforms, normalises everything to AUD, fetches daily prices from Yahoo Finance, and gives buy-only rebalance recommendations against category targets. Broker file imports, IMAP auto-import of trade confirmations, runs on Vercel or a Raspberry Pi.",
-    "tags": ["Next.js", "TypeScript", "Drizzle", "Turso", "Self-hosted"],
+    "description": "Multi-user investment portfolio tracker for Australian DIY investors, live at folioxtracker.com. Records trades across crypto and equity platforms, normalises everything to AUD, fetches daily prices from Yahoo Finance, and gives buy-only rebalance recommendations against category targets. Email/Google sign-in with multiple portfolios per account, broker file and IMAP auto-imports — open-source and self-hostable on Vercel or a Raspberry Pi.",
+    "tags": ["Next.js 16", "React 19", "TypeScript", "Drizzle / Turso", "shadcn/ui"],
+    "link": "https://folioxtracker.com",
     "github": "https://github.com/chrishanfernando/folioxtracker",
     "highlight": true
   },
