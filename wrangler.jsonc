@@ -11,17 +11,17 @@
 //
 // KV: create with `npx wrangler kv namespace create MEAL_KV` and paste the id below.
 {
-  "name": "professionalprofile",
-  "compatibility_date": "2026-07-18",
-  "main": "./worker/index.js",
-  "assets": {
-    "directory": "./dist",
-    "binding": "ASSETS"
-  },
-  "kv_namespaces": [
-    {
-      "binding": "MEAL_KV",
-      "id": "REPLACE_WITH_KV_NAMESPACE_ID"
-    }
-  ]
+	"name": "professionalprofile",
+	"compatibility_date": "2026-07-18",
+	"main": "./worker/index.js",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "MEAL_KV",
+			"id": "9a661930af1a440db4e93821c74396e2"
+		}
+	]
 }
