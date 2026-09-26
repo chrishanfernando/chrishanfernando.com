@@ -1,8 +1,27 @@
-// Cloudflare Workers config — static assets only, no server-side code.
+// Cloudflare Worker config.
+//
+// The site is a static Astro build served from ./dist. A small Worker (worker/index.js)
+// sits in front to serve ONE private feature — the password-gated meal-planning page at
+// /m/<slug> — and hands every other request straight to the static assets.
+//
+// Secrets (set with `npx wrangler secret put <NAME>` — never committed):
+//   MEAL_SLUG           the path segment for the private URL: /m/<MEAL_SLUG>
+//   MEAL_PASSWORD       the shared password
+//   MEAL_COOKIE_SECRET  random key used to sign the session cookie
+//
+// KV: create with `npx wrangler kv namespace create MEAL_KV` and paste the id below.
 {
-  "name": "professionalprofile",
-  "compatibility_date": "2026-07-18",
-  "assets": {
-    "directory": "./dist"
-  }
+	"name": "professionalprofile",
+	"compatibility_date": "2026-07-18",
+	"main": "./worker/index.js",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "MEAL_KV",
+			"id": "9a661930af1a440db4e93821c74396e2"
+		}
+	]
 }
